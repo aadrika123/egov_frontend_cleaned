@@ -1,0 +1,79 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//    Author - Talib Hussain
+//    Version - 1.0
+//    Date - 14 july 2022
+//    Revision - 1
+//    Project - JUIDCO
+//    Component  - PropertyObjectionDetailsCard2 (closed)
+//    DESCRIPTION - PropertyObjectionDetailsCard2 Component
+//////////////////////////////////////////////////////////////////////////////////////
+import React from 'react'
+import { GrHomeRounded } from 'react-icons/gr'
+
+function PropertyObjectionDetailsCard2(props) {
+    return (
+        <>
+            <div className="bg-gray-100">
+                <div className="container mx-0 sm:mx-auto mb-0 mt-1 p-1 sm:p-5 ">
+                    <div className="md:flex no-wrap md:-mx-2 ">
+
+                        <div className="w-full mx-2 h-36">
+                            <div className="bg-white p-3 shadow-xl rounded-sm">
+                                <div className="flex items-center pl-0 space-x-2 font-semibold text-gray-900 leading-8 mb-2">
+                                    <span clas="text-green-500">
+                                        <GrHomeRounded />
+                                    </span>
+                                    <span className="tracking-wide">Concession Details</span>
+                                </div>
+                                <div className="text-gray-700">
+                                    <div className="grid md:grid-cols-3 text-sm">
+                                        <div className="grid grid-cols-2">
+                                            <div className="px- py-2 font-semibold">Gender :</div>
+                                            <div className="px- py-2">Female</div>
+                                        </div>
+                                        <div className="grid grid-cols-2">
+                                            <div className="px- py-2 font-semibold">DOB :</div>
+                                            <div className="px- py-2">11-01-1999</div>
+                                        </div>
+                                        <div className="grid grid-cols-2">
+                                            <div className="px- py-2 font-semibold">Specially-Abled :</div>
+                                            <div className="px- py-2">Yes</div>
+                                        </div>
+                                        <div className="grid grid-cols-2">
+                                            <div className="px- py-2 font-semibold">Armed-Force :</div>
+                                            <div className="px- py-2">No</div>
+                                        </div>
+
+
+
+                                        <div className="grid grid-cols-2">
+                                            <div className="px-4 py-2 font-semibold"></div>
+                                            <div className="px-4 py-2">
+                                                <a className="text-blue-800" href="mailto:jane@example.com"></a>
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-2">
+                                            <div className="px-4 py-2 font-semibold"></div>
+                                            <div className="px-4 py-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default PropertyObjectionDetailsCard2
+/**
+ * Exported to :
+ * 1. PropertyObjectionDetailsTabs Component
+ * 
+ */

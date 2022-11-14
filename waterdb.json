@@ -1,0 +1,833 @@
+{
+  "applicationList": [
+    {
+      "id": 1,
+      "saf_no": "6466244377",
+      "owner_name": "Water Swati",
+      "mobile": "0601669703",
+      "property_type": "VACANT",
+      "assessment_type": "New Assessment",
+      "ward_no": 1,
+      "received_at": "10/22/2021",
+      "special": true
+    },
+    {
+      "id": 2,
+      "saf_no": "0880155833",
+      "owner_name": "Maddalena",
+      "mobile": "2494499119",
+      "property_type": "INDEPENDENT",
+      "assessment_type": "Mutation",
+      "ward_no": 2,
+      "received_at": "5/27/2022",
+      "special": false
+    },
+    {
+      "id": 3,
+      "saf_no": "4137541752",
+      "owner_name": "Kat",
+      "mobile": "6421284949",
+      "property_type": "SUPER",
+      "assessment_type": "Mutation",
+      "ward_no": 3,
+      "received_at": "12/3/2021",
+      "special": false
+    },
+    {
+      "id": 4,
+      "saf_no": "1092339701",
+      "owner_name": "Mirabella",
+      "mobile": "6857121400",
+      "property_type": "VACANT",
+      "assessment_type": "Mutation",
+      "ward_no": 4,
+      "received_at": "1/22/2022",
+      "special": false
+    },
+    {
+      "id": 5,
+      "saf_no": "6496074410",
+      "owner_name": "Matteo",
+      "mobile": "9434007704",
+      "property_type": "SUPER",
+      "assessment_type": "Mutation",
+      "ward_no": 5,
+      "received_at": "7/26/2021",
+      "special": false
+    },
+    {
+      "id": 6,
+      "saf_no": "5741892000",
+      "owner_name": "Kassia",
+      "mobile": "6983873777",
+      "property_type": "SUPER",
+      "assessment_type": "New Assessment",
+      "ward_no": 6,
+      "received_at": "1/22/2022",
+      "special": false
+    },
+    {
+      "id": 7,
+      "saf_no": "9835280274",
+      "owner_name": "Roley",
+      "mobile": "7207595174",
+      "property_type": "INDEPENDENT",
+      "assessment_type": "Reassessment",
+      "ward_no": 7,
+      "received_at": "11/27/2021",
+      "special": false
+    },
+    {
+      "id": 8,
+      "saf_no": "9471324408",
+      "owner_name": "Seth",
+      "mobile": "7483500484",
+      "property_type": "SUPER",
+      "assessment_type": "New Assessment",
+      "ward_no": 8,
+      "received_at": "9/15/2021",
+      "special": false
+    },
+    {
+      "id": 9,
+      "saf_no": "6936005713",
+      "owner_name": "Carlynn",
+      "mobile": "8311705178",
+      "property_type": "VACANT",
+      "assessment_type": "Reassessment",
+      "ward_no": 9,
+      "received_at": "5/1/2022",
+      "special": false
+    },
+    {
+      "id": 10,
+      "saf_no": "0853373639",
+      "owner_name": "Esteban",
+      "mobile": "3950894012",
+      "property_type": "VACANT",
+      "assessment_type": "Reassessment",
+      "ward_no": 10,
+      "received_at": "12/8/2021",
+      "special": false
+    },
+    {
+      "id": 11,
+      "saf_no": "6466244377",
+      "owner_name": "Tiertza",
+      "mobile": "0601669703",
+      "property_type": "VACANT",
+      "assessment_type": "New Assessment",
+      "ward_no": 1,
+      "received_at": "10/22/2021",
+      "special": false
+    },
+    {
+      "id": 12,
+      "saf_no": "0880155833",
+      "owner_name": "Maddalena",
+      "mobile": "2494499119",
+      "property_type": "INDEPENDENT",
+      "assessment_type": "Mutation",
+      "ward_no": 2,
+      "received_at": "5/27/2022",
+      "special": false
+    }
+  ],
+  "levelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Back Office",
+      "name": "Dipu Tony",
+      "activeCandidateStatus": true,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 102,
+      "designation": "Dealing Assistant",
+      "name": "Shark",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 103,
+      "designation": "Agency TC",
+      "name": "Dark",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 104,
+      "designation": "ULB TC",
+      "name": "Gark",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 105,
+      "designation": "Section Incharge",
+      "name": "Hark",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 106,
+      "designation": "Executive Officer",
+      "name": "Jark",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 107,
+      "designation": "Back Office",
+      "name": "Mark Sandy2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 108,
+      "designation": "Dealing Assistant",
+      "name": "Shark2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 109,
+      "designation": "Agency TC",
+      "name": "Dark2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 110,
+      "designation": "ULB TC",
+      "name": "Gark2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 111,
+      "designation": "Section Incharge",
+      "name": "Hark2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 112,
+      "designation": "Executive Officer",
+      "name": "Jark2",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "DesignationMstr": [
+    {
+      "id": 101,
+      "designation": "Back Office",
+      "status": 1
+    },
+    {
+      "id": 102,
+      "designation": "Dealing Assistant",
+      "status": 1
+    },
+    {
+      "id": 103,
+      "designation": "Agency TC",
+      "status": 1
+    },
+    {
+      "id": 104,
+      "designation": "ULB TC",
+      "status": 1
+    },
+    {
+      "id": 105,
+      "designation": "Section Incharge",
+      "status": 1
+    },
+    {
+      "id": 106,
+      "designation": "Executive Officer",
+      "status": 1
+    }
+  ],
+  "timeLine": [
+    {
+      "id": 201,
+      "sender": "Dealing Assistant",
+      "comment": "Application has been verified and all documents are correct, Approved without any doubt",
+      "dateTime": "20 jan 2021",
+      "activeStatus": true
+    },
+    {
+      "id": 202,
+      "sender": "Agency TC",
+      "comment": "Send to Tax Collector",
+      "dateTime": "20 jan 2021",
+      "activeStatus": false
+    },
+    {
+      "id": 203,
+      "sender": "ULB TC",
+      "comment": "Send to Tax Collector",
+      "dateTime": "20 jan 2021",
+      "activeStatus": false
+    },
+    {
+      "id": 204,
+      "sender": "Section Incharge",
+      "comment": "Send to Tax Collector",
+      "dateTime": "20 jan 2021",
+      "activeStatus": false
+    },
+    {
+      "id": 205,
+      "sender": "Executive Officer",
+      "comment": "Send to Tax Collector",
+      "dateTime": "20 jan 2021",
+      "activeStatus": false
+    }
+  ],
+  "workflowList": [
+    {
+      "workflowName": "four verification",
+      "ulb": "Ranchi",
+      "designation": [
+        "Back Office",
+        "Dealing Assistant",
+        "Section Incharge",
+        "Executive Officer"
+      ],
+      "candidates": [
+        "Shark",
+        "Hark",
+        "Jark",
+        "Mark Sandy2",
+        "Hark2"
+      ],
+      "workflowElements": [
+        "DocumentShow"
+      ],
+      "id": 36
+    },
+    {
+      "workflowName": "first work",
+      "ulb": "Deoghar",
+      "designation": [
+        "Back Office",
+        "Dealing Assistant",
+        "Section Incharge",
+        "Executive Officer"
+      ],
+      "candidates": [
+        "Dark2",
+        "Hark2",
+        "Gark3",
+        "Hark3",
+        "Jark3"
+      ],
+      "workflowElements": [
+        "WorkflowList"
+      ],
+      "id": 37
+    }
+  ],
+  "workflowbackup": [
+    {
+      "workflowName": "log workflow",
+      "initiator": "Shark",
+      "finisher": "Gark",
+      "candidates": [
+        "Mark Sandy",
+        "Shark"
+      ],
+      "id": 27
+    },
+    {
+      "workflowName": "workflow seven",
+      "initiator": "Shark2",
+      "finisher": "Mark Sandy2",
+      "candidates": [
+        "Mark Sandy",
+        "Shark"
+      ],
+      "id": 28
+    },
+    {
+      "workflowName": "new workflow",
+      "initiator": "Hark",
+      "finisher": "Gark",
+      "candidates": [
+        "Mark Sandy",
+        "Shark"
+      ],
+      "id": 29
+    },
+    {
+      "workflowName": "my new work",
+      "initiator": "Shark",
+      "finisher": "Dark",
+      "candidates": [
+        "Mark Sandy",
+        "Shark"
+      ],
+      "id": 30
+    },
+    {
+      "workflowName": "latest",
+      "initiator": "Dark2",
+      "finisher": "Gark",
+      "candidates": [
+        "Hark",
+        "Jark",
+        "Mark Sandy2",
+        "Gark2",
+        "Hark2",
+        "Jark2"
+      ],
+      "id": 31
+    },
+    {
+      "workflowName": "Property-Saf-Workflow",
+      "initiator": "Shark",
+      "finisher": "Gark",
+      "candidates": [
+        "Hark",
+        "Jark",
+        "Mark Sandy2",
+        "Gark2",
+        "Hark2"
+      ],
+      "id": 32
+    },
+    {
+      "workflowName": "fafa",
+      "initiator": "Dark",
+      "finisher": "Gark",
+      "candidates": [],
+      "id": 33
+    },
+    {
+      "workflowName": "Verification Workflow",
+      "ulb": "1",
+      "designation": [
+        "101",
+        "102",
+        "105",
+        "106"
+      ],
+      "candidates": [
+        "1",
+        "2",
+        "5",
+        "7"
+      ],
+      "workflowElements": [
+        "1"
+      ],
+      "id": 34
+    }
+  ],
+  "workflowCandidate": [
+    {
+      "id": 101,
+      "userType": "General",
+      "designation": "Back Office",
+      "userName": "Mark Sandy",
+      "employeeId": "301",
+      "activeCandidateStatus": true,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 102,
+      "userType": "Pseudo",
+      "designation": "Dealing Assistant",
+      "userName": "Shark",
+      "employeeId": "302",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 103,
+      "userType": "General",
+      "designation": "Agency TC",
+      "userName": "Dark",
+      "employeeId": "303",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 104,
+      "userType": "Pseudo",
+      "designation": "ULB TC",
+      "userName": "Gark",
+      "employeeId": "304",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 105,
+      "userType": "General",
+      "designation": "Section Incharge",
+      "userName": "Hark",
+      "employeeId": "305",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 106,
+      "userType": "Pseudo",
+      "designation": "Executive Officer",
+      "userName": "Jark",
+      "employeeId": "306",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 107,
+      "userType": "General",
+      "designation": "Back Office",
+      "userName": "Mark Sandy2",
+      "employeeId": "307",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 108,
+      "userType": "Pseudo",
+      "designation": "Dealing Assistant",
+      "userName": "Shark2",
+      "employeeId": "308",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 109,
+      "userType": "General",
+      "designation": "Agency TC",
+      "userName": "Dark2",
+      "employeeId": "309",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 110,
+      "userType": "Pseudo",
+      "designation": "ULB TC",
+      "userName": "Gark2",
+      "employeeId": "310",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 111,
+      "userType": "General",
+      "designation": "Section Incharge",
+      "userName": "Hark2",
+      "employeeId": "311",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 112,
+      "userType": "Pseudo",
+      "designation": "Executive Officer",
+      "userName": "Jark2",
+      "employeeId": "312",
+      "activeCandidateStatus": false,
+      "ward_permission": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "workflowElements": [
+    {
+      "id": 1,
+      "index": 0,
+      "title": "SafDetailsCard",
+      "component": "<SafDetailsCard/>"
+    },
+    {
+      "id": 2,
+      "index": 1,
+      "title": "DocumentShow",
+      "component": "<DocumentMailbox/>"
+    },
+    {
+      "id": 3,
+      "index": 2,
+      "title": "WorkflowList",
+      "component": "<WorkflowList/>"
+    }
+  ],
+  "ulbMstr": [
+    {
+      "id": 1,
+      "ulbName": "Ranchi"
+    },
+    {
+      "id": 2,
+      "ulbName": "Dhanbad"
+    },
+    {
+      "id": 3,
+      "ulbName": "Deoghar"
+    },
+    {
+      "id": 4,
+      "ulbName": "Bundu"
+    }
+  ],
+  "userMstr": [
+    {
+      "name": "Mark Sandy",
+      "id": 1,
+      "designationId": 101,
+      "designationName": "Back Office"
+    },
+    {
+      "name": "Shark",
+      "id": 2,
+      "designationId": 102,
+      "designationName": "Dealing Assistant"
+    },
+    {
+      "name": "Dark",
+      "id": 3,
+      "designationId": 103,
+      "designationName": "Agency TC"
+    },
+    {
+      "name": "Gark",
+      "id": 4,
+      "designationId": 104,
+      "designationName": "ULB TC"
+    },
+    {
+      "name": "Hark",
+      "id": 5,
+      "designationId": 105,
+      "designationName": "Section Incharge"
+    },
+    {
+      "name": "Jark",
+      "id": 6,
+      "designationId": 106,
+      "designationName": "Executive Officer"
+    },
+    {
+      "name": "Mark Sandy2",
+      "id": 7,
+      "designationId": 101,
+      "designationName": "Back Office"
+    },
+    {
+      "name": "Shark2",
+      "id": 8,
+      "designationId": 102,
+      "designationName": "Dealing Assistant"
+    },
+    {
+      "name": "Dark2",
+      "id": 9,
+      "designationId": 103,
+      "designationName": "Agency TC"
+    },
+    {
+      "name": "Gark2",
+      "id": 10,
+      "designationId": 104,
+      "designationName": "ULB TC"
+    },
+    {
+      "name": "Hark2",
+      "id": 11,
+      "designationId": 105,
+      "designationName": "Section Incharge"
+    },
+    {
+      "name": "Jark2",
+      "id": 12,
+      "designationId": 106,
+      "designationName": "Executive Officer"
+    },
+    {
+      "name": "Mark Sandy3",
+      "id": 13,
+      "designationId": 101,
+      "designationName": "Back Office"
+    },
+    {
+      "name": "Shark3",
+      "id": 14,
+      "designationId": 102,
+      "designationName": "Dealing Assistant"
+    },
+    {
+      "name": "Dark3",
+      "id": 15,
+      "designationId": 103,
+      "designationName": "Agency TC"
+    },
+    {
+      "name": "Gark3",
+      "id": 16,
+      "designationId": 104,
+      "designationName": "ULB TC"
+    },
+    {
+      "name": "Hark3",
+      "id": 17,
+      "designationId": 105,
+      "designationName": "Section Incharge"
+    },
+    {
+      "name": "Jark3",
+      "id": 18,
+      "designationId": 106,
+      "designationName": "Executive Officer"
+    }
+  ]
+}

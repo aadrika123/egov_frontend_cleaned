@@ -1,0 +1,81 @@
+{
+  "name": "egov-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.5",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
+    "aphrodite": "^2.4.0",
+    "axios": "^0.27.2",
+    "date-fns": "^2.28.0",
+    "formik": "^2.2.9",
+    "html-react-parser": "^3.0.0",
+    "json-server": "^0.17.0",
+    "moment": "^2.29.4",
+    "multiselect-react-dropdown": "^2.0.25",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-chatbot-kit": "^2.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-csv": "^2.2.2",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.2.0",
+    "react-dropdown": "^1.10.0",
+    "react-error-boundary": "^3.1.4",
+    "react-google-charts": "^4.0.0",
+    "react-icons": "^4.4.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-modal": "^3.15.1",
+    "react-query": "^3.39.1",
+    "react-quilljs": "^1.3.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.4.0",
+    "react-spinners": "^0.13.3",
+    "react-switch": "^7.0.0",
+    "react-table": "^7.8.0",
+    "react-toastify": "^9.0.5",
+    "redux": "^4.2.0",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11",
+    "yup-phone": "^1.3.2"
+  },
+  "scripts": {
+    "start": "set PORT=3000 && react-scripts start",
+    "json-server": "npx json-server --watch db.json --port 3001",
+    "advt-server": "npx json-server --watch Advtdata.json --port 8000",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-to-print-advanced": "^2.1.2",
+    "tailwindcss": "^3.1.4"
+  }
+}

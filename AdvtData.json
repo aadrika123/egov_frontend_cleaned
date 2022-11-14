@@ -1,0 +1,384 @@
+{
+  "VehicleAdvtTimeLine": [
+    {
+      "sender": "Admin",
+      "sendTo": "Manish Kachhap",
+      "comment": "fgh",
+      "dateTime": "26/07/2022",
+      "id": 1
+    }
+  ],
+  "VehicleAdvtDocuments": [
+    {
+      "filename": "31548-robot-says-hello.gif",
+      "filetype": "image/gif",
+      "filesize": "2393139 bytes",
+      "docFor": "Trade Licence",
+      "id": 1
+    }
+  ],
+  "VehicleAdvtlevelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Initiator",
+      "name": "Manish Kachhap",
+      "activeCandidateStatus": true
+    },
+    {
+      "id": 102,
+      "designation": "Finisher",
+      "name": "Hema Tirkey",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 103,
+      "designation": "Initiator",
+      "name": "Rakesh Kumar",
+      "activeCandidateStatus": false
+    }
+  ],
+  "VehicleAdvtapplicationList": [
+    {
+      "id": 1,
+      "unique_id": "6466244377",
+      "entity_ward": "24",
+      "entity_name": "Menu Bittal Shop",
+      "entity_addrsss": "Raturoad Ranchi",
+      "licence_year": "2021-2022",
+      "trade_licence_no": "546321TADRF",
+      "mobile": "9878965875",
+      "appliant_name": "Mahavir Verma",
+      "father_name": "Rajesh Verma",
+      "received_at": "10/22/2021",
+      "special": false,
+      "status": "Accept"
+    },
+    {
+      "id": 2,
+      "unique_id": "588466561",
+      "entity_ward": "17",
+      "entity_name": "Aadi Enterprises",
+      "entity_addrsss": "Main Road Ranchi",
+      "trade_licence_no": "6824456184",
+      "licence_year": "2020-2021",
+      "mobile": "9965458744",
+      "appliant_name": "Rahul Trickry",
+      "father_name": "Suresh Tirki",
+      "received_at": "10/05/2022",
+      "special": false,
+      "status": "Reject"
+    }
+  ],
+  "BanquetMarriageAdvtTimeLine": [
+    {
+      "sender": "Admin",
+      "sendTo": "Kumar Sandy",
+      "comment": "fgh",
+      "dateTime": "26/07/2022",
+      "id": 1
+    },
+    {
+      "sender": "Admin",
+      "sendTo": "Hemant Munda",
+      "comment": "dsf",
+      "dateTime": "01/08/2022",
+      "id": 2
+    }
+  ],
+  "BanquetMarriageAdvtDocuments": [
+    {
+      "filename": "31548-robot-says-hello.gif",
+      "filetype": "image/gif",
+      "filesize": "2393139 bytes",
+      "docFor": "Trade Licence",
+      "id": 1
+    }
+  ],
+  "BanquetMarriageAdvtlevelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Initiator",
+      "name": "Kumar Sandy",
+      "activeCandidateStatus": true
+    },
+    {
+      "id": 102,
+      "designation": "Finisher",
+      "name": "Hemant Munda",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 103,
+      "designation": "Initiator",
+      "name": "Shyam Mahto",
+      "activeCandidateStatus": false
+    }
+  ],
+  "BanquetMarriageAdvtapplicationList": [
+    {
+      "id": 1,
+      "unique_id": "6466244377",
+      "entity_ward": "24",
+      "entity_name": "Menu Bittal Shop",
+      "entity_addrsss": "Raturoad Ranchi",
+      "licence_year": "2021-2022",
+      "trade_licence_no": "546321TADRF",
+      "mobile": "9878965875",
+      "appliant_name": "Mahavir Verma",
+      "father_name": "Rajesh Verma",
+      "received_at": "10/22/2021",
+      "special": false,
+      "status": "Accept"
+    },
+    {
+      "id": 2,
+      "unique_id": "588466561",
+      "entity_ward": "17",
+      "entity_name": "Aadi Enterprises",
+      "entity_addrsss": "Main Road Ranchi",
+      "trade_licence_no": "6824456184",
+      "licence_year": "2020-2021",
+      "mobile": "9965458744",
+      "appliant_name": "Rahul Trickry",
+      "father_name": "Suresh Tirki",
+      "received_at": "10/05/2022",
+      "special": false,
+      "status": "Reject"
+    }
+  ],
+  "PLAdvtTimeLine": [
+    {
+      "sender": "Admin",
+      "sendTo": "Rakesh Mahto",
+      "comment": "fgh",
+      "dateTime": "26/07/2022",
+      "id": 1
+    }
+  ],
+  "PLAdvtDocuments": [
+    {
+      "filename": "31548-robot-says-hello.gif",
+      "filetype": "image/gif",
+      "filesize": "2393139 bytes",
+      "docFor": "Trade Licence",
+      "id": 1
+    }
+  ],
+  "PLAdvtlevelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Initiator",
+      "name": "Rakesh Mahto",
+      "activeCandidateStatus": true
+    },
+    {
+      "id": 102,
+      "designation": "Finisher",
+      "name": "Hemant KUmar",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 103,
+      "designation": "Initiator",
+      "name": "Shyam Kumar",
+      "activeCandidateStatus": false
+    }
+  ],
+  "PLAdvtapplicationList": [
+    {
+      "id": 1,
+      "unique_id": "6466244377",
+      "entity_ward": "24",
+      "entity_name": "Menu Bittal Shop",
+      "entity_addrsss": "Raturoad Ranchi",
+      "licence_year": "2021-2022",
+      "trade_licence_no": "546321TADRF",
+      "mobile": "9878965875",
+      "appliant_name": "Mahavir Verma",
+      "father_name": "Rajesh Verma",
+      "received_at": "10/22/2021",
+      "special": false,
+      "status": "Accept"
+    },
+    {
+      "id": 2,
+      "unique_id": "588466561",
+      "entity_ward": "17",
+      "entity_name": "Aadi Enterprises",
+      "entity_addrsss": "Main Road Ranchi",
+      "trade_licence_no": "6824456184",
+      "licence_year": "2020-2021",
+      "mobile": "9965458744",
+      "appliant_name": "Rahul Trickry",
+      "father_name": "Suresh Tirki",
+      "received_at": "10/05/2022",
+      "special": false,
+      "status": "Reject"
+    }
+  ],
+  "LodgeHostelAdvtTimeLine": [
+    {
+      "sender": "Admin",
+      "sendTo": "Sandy",
+      "comment": "ghjhgj",
+      "dateTime": "26/07/2022",
+      "id": 1
+    },
+    {
+      "sender": "Admin",
+      "sendTo": "Shyam Mahto",
+      "comment": "tyutyu",
+      "dateTime": "26/07/2022",
+      "id": 2
+    },
+    {
+      "sender": "Admin",
+      "sendTo": "Sandy",
+      "comment": "ghgh",
+      "dateTime": "26/07/2022",
+      "id": 3
+    }
+  ],
+  "LodgeHostelAdvtDocuments": [
+    {
+      "filename": "31548-robot-says-hello.gif",
+      "filetype": "image/gif",
+      "filesize": "2393139 bytes",
+      "docFor": "Trade Licence",
+      "id": 1
+    }
+  ],
+  "LodgeHostelAdvtlevelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Initiator",
+      "name": "Sandy",
+      "activeCandidateStatus": true
+    },
+    {
+      "id": 102,
+      "designation": "Finisher",
+      "name": "Hemant Munda",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 103,
+      "designation": "Initiator",
+      "name": "Shyam Mahto",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 104,
+      "designation": "Initiator",
+      "name": "Test User",
+      "activeCandidateStatus": true
+    }
+  ],
+  "SelfAdvtTimeLine": [
+    {
+      "sender": "Admin",
+      "sendTo": "Kumar Sandy",
+      "comment": "fgh",
+      "dateTime": "26/07/2022",
+      "id": 1
+    },
+    {
+      "sender": "Admin",
+      "sendTo": "Hemant Munda",
+      "comment": "gfhg",
+      "dateTime": "02/08/2022",
+      "id": 2
+    }
+  ],
+  "LodgeHostelAdvtapplicationList": [
+    {
+      "id": 1,
+      "unique_id": "6466244377",
+      "entity_ward": "24",
+      "entity_name": "Menu Bittal Shop",
+      "entity_addrsss": "Raturoad Ranchi",
+      "licence_year": "2021-2022",
+      "trade_licence_no": "546321TADRF",
+      "mobile": "9878965875",
+      "appliant_name": "Mahavir Verma",
+      "father_name": "Rajesh Verma",
+      "received_at": "10/22/2021",
+      "special": false
+    },
+    {
+      "id": 2,
+      "unique_id": "588466561",
+      "entity_ward": "17",
+      "entity_name": "Aadi Enterprises",
+      "entity_addrsss": "Main Road Ranchi",
+      "trade_licence_no": "6824456184",
+      "licence_year": "2020-2021",
+      "mobile": "9965458744",
+      "appliant_name": "Rahul Trickry",
+      "father_name": "Suresh Tirki",
+      "received_at": "10/05/2022",
+      "special": false
+    }
+  ],
+  "SelfAdvtDocuments": [
+    {
+      "filename": "31548-robot-says-hello.gif",
+      "filetype": "image/gif",
+      "filesize": "2393139 bytes",
+      "docFor": "Trade Licence",
+      "id": 1
+    }
+  ],
+  "SelfAdvtlevelCandidateList": [
+    {
+      "id": 101,
+      "designation": "Initiator",
+      "name": "Kumar Sandy",
+      "activeCandidateStatus": true
+    },
+    {
+      "id": 102,
+      "designation": "Finisher",
+      "name": "Hemant Munda",
+      "activeCandidateStatus": false
+    },
+    {
+      "id": 103,
+      "designation": "Initiator",
+      "name": "Shyam Mahto",
+      "activeCandidateStatus": false
+    }
+  ],
+  "SelfAdvtapplicationList": [
+    {
+      "id": 1,
+      "unique_id": "6466244377",
+      "entity_ward": "24",
+      "entity_name": "Menu Bittal Shop",
+      "entity_addrsss": "Raturoad Ranchi",
+      "licence_year": "2021-2022",
+      "trade_licence_no": "546321TADRF",
+      "mobile": "9878965875",
+      "appliant_name": "Mahavir Verma",
+      "father_name": "Rajesh Verma",
+      "received_at": "10/22/2021",
+      "special": false,
+      "status": "Accept"
+    },
+    {
+      "id": 2,
+      "unique_id": "588466561",
+      "entity_ward": "17",
+      "entity_name": "Aadi Enterprises",
+      "entity_addrsss": "Main Road Ranchi",
+      "trade_licence_no": "6824456184",
+      "licence_year": "2020-2021",
+      "mobile": "9965458744",
+      "appliant_name": "Rahul Trickry",
+      "father_name": "Suresh Tirki",
+      "received_at": "10/05/2022",
+      "special": false,
+      "status": "Reject"
+    }
+  ]
+}

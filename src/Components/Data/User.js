@@ -1,0 +1,22 @@
+export const User = [
+    {
+        id:'1',
+        userName:'mark',
+        password:'12345'
+    },
+    {
+        id:'2',
+        userName:'shark',
+        password:'12345'
+    },
+    {
+        id:'3',
+        userName:'henry',
+        password:'12345'
+    },
+    {
+        id:'4',
+        userName:'markus',
+        password:'12345'
+    }
+]

@@ -1,0 +1,411 @@
+{
+  "user_types": [
+    {
+      "id": 1,
+      "user_type": "Vendor",
+      "roleId": 1
+    },
+    {
+      "id": 2,
+      "user_type": "Agency",
+      "roleId": 1
+    },
+    {
+      "id": 3,
+      "user_type": "SPS",
+      "roleId": 1
+    },
+    {
+      "id": 4,
+      "user_type": "Local",
+      "roleId": 2
+    },
+    {
+      "user_type": "userTypeOne",
+      "id": 5
+    },
+    {
+      "user_type": "UserTypeTwo",
+      "id": 6
+    }
+  ],
+  "roles": [
+    {
+      "role": "Mediator",
+      "id": 1
+    },
+    {
+      "role": "Super Admin",
+      "id": 2
+    },
+    {
+      "role": "Project Manager",
+      "id": 3
+    },
+    {
+      "role": "Tax Collector",
+      "id": 4
+    },
+    {
+      "role": "Tax Daroga",
+      "id": 5
+    },
+    {
+      "role": "Section Head",
+      "id": 6
+    },
+    {
+      "role": "Executive Officer",
+      "id": 7
+    },
+    {
+      "role": "Dealing Assistant",
+      "id": 8
+    },
+    {
+      "role": "myrole",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "fname": "Anshuman",
+      "lname": "Singh",
+      "status": 1,
+      "id": 1
+    },
+    {
+      "fname": "Monu",
+      "lname": "Singh",
+      "status": 0,
+      "id": 2
+    },
+    {
+      "fname": "Sonu",
+      "lname": "Singh",
+      "status": 1,
+      "id": 3
+    },
+    {
+      "fname": "Heeru",
+      "lname": "Singh",
+      "status": 1,
+      "id": 4
+    },
+    {
+      "fname": "Any",
+      "lname": "Singh",
+      "status": 1,
+      "id": 5
+    },
+    {
+      "fname": "Many",
+      "lname": "Singh",
+      "status": 0,
+      "id": 6
+    },
+    {
+      "fname": "Beni",
+      "lname": "Singh",
+      "status": 1,
+      "id": 7
+    },
+    {
+      "fname": "Fenny",
+      "lname": "Singh",
+      "status": 0,
+      "id": 8
+    },
+    {
+      "fname": "Sunny",
+      "lname": "Singh",
+      "status": 1,
+      "id": 9
+    },
+    {
+      "roleUserId": "1",
+      "id": 10
+    }
+  ],
+  "roleUser": [
+    {
+      "role": "Dealing Assistant",
+      "user": [
+        {
+          "fname": "Anshuman",
+          "lname": "Singh",
+          "status": 1,
+          "id": 1
+        },
+        {
+          "fname": "Monu",
+          "lname": "Singh",
+          "status": 0,
+          "id": 2
+        },
+        {
+          "fname": "Sonu",
+          "lname": "Singh",
+          "status": 1,
+          "id": 3
+        },
+        {
+          "fname": "Heeru",
+          "lname": "Singh",
+          "status": 1,
+          "id": 4
+        }
+      ],
+      "id": 1
+    },
+    {
+      "role": "Executive Officer",
+      "user": [
+        {
+          "fname": "Any",
+          "lname": "Singh",
+          "status": 1,
+          "id": 5
+        },
+        {
+          "fname": "Many",
+          "lname": "Singh",
+          "status": 0,
+          "id": 6
+        },
+        {
+          "fname": "Beni",
+          "lname": "Singh",
+          "status": 1,
+          "id": 7
+        },
+        {
+          "fname": "Fenny",
+          "lname": "Singh",
+          "status": 0,
+          "id": 8
+        },
+        {
+          "fname": "Sunny",
+          "lname": "Singh",
+          "status": 1,
+          "id": 9
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "ApiData": [
+    {
+      "category": "TRADE",
+      "revision": 1,
+      "apiBaseUrl": "http://smartulb.co.in/api/property/",
+      "preConditions": "Authentication Required",
+      "apiEndPoint": "ward/getAllById",
+      "requestPayload": "{\n   wardId:1,\n   wardName:\"gumla\"\n}",
+      "responsePayload": "{\n   wardId:1,\n   wardName:\"gumla\"\n}",
+      "description": "This api will receive data based on the given ward id's",
+      "remarks": "v1 is stable but require version 2 with better responses",
+      "responseFormat": 1,
+      "createdBy": "Anshu Verma",
+      "discontinued": 0,
+      "id": 25
+    },
+    {
+      "category": "PROPERTY",
+      "revision": 1,
+      "apiBaseUrl": "http://smartulb.co.in/api",
+      "preConditions": "login not required",
+      "apiEndPoint": "getward/wardmasterId",
+      "requestPayload": "{\"createdOn\": \"abc\",\n    \"createdBy\": \"abc\",\n}",
+      "responsePayload": "{\n    \"description\": \"abc\",\n    \"category\": \"No Authenticated\",\n    \"end point\": \"abc\",\n    \"Usage\": \"abc\",\n    \"preCondition\": \"abc\",\n    \"requestPayload\": \"abc\",\n    \"responsePayload\": \"abc\",\n    \"version\": \"abc\",    \"responsePayload\": \"abc\",\n    \"createdOn\": \"abc\",\n    \"createdBy\": \"abc\",\n    \"revisionNo\": \"abc\",\n    \"discontinued\": \"abc\"\n}",
+      "description": "short description of the api",
+      "remarks": "this api is bug free.",
+      "responseFormat": "JSON",
+      "createdBy": "anshu verma",
+      "discontinued": 0,
+      "id": 26
+    },
+    {
+      "category": "TRADE",
+      "revision": 1,
+      "apiBaseUrl": "http://smartulb.co.in/",
+      "preConditions": "login not required",
+      "apiEndPoint": "api/getward/wardmasterId",
+      "requestPayload": "name,mobile,email\n",
+      "responsePayload": "token_id ,user_id",
+      "description": "dfgsgfsgdsfg",
+      "remarks": "fghfdgh",
+      "responseFormat": "JSON",
+      "createdBy": "anshu verma",
+      "discontinued": 0,
+      "id": 27
+    },
+    {
+      "category": "PROPERTY",
+      "revision": 1,
+      "apiBaseUrl": "http://smartulb.co.in/",
+      "preConditions": "login not required",
+      "apiEndPoint": "getward/wardmasterId",
+      "requestPayload": "name,password",
+      "responsePayload": "{fname:\"\",lname:\"\",fname:\"\",}",
+      "description": "demo description",
+      "remarks": "Demo remarks",
+      "responseFormat": "JSON",
+      "createdBy": "anshu verma",
+      "discontinued": [
+        "1"
+      ],
+      "tags": "property, ward, ward data, wardMaster",
+      "id": 28
+    }
+  ],
+  "notices": [
+    {
+      "id": 1,
+      "noticeDate": "2022-08-22"
+    },
+    {
+      "id": 2,
+      "noticeDate": "2022-06-14"
+    }
+  ],
+  "licenseDetails": [
+    {
+      "id": 1,
+      "application_no": "APN123456874",
+      "firm_name": "Mellon Mellon",
+      "license_no": "RAN1234586855",
+      "address": "Demo address",
+      "valid_upto": "2023-08-19",
+      "addressProof": "",
+      "applicationForm": "",
+      "incomeProof": "",
+      "ownerIdProof": "",
+      "firmDetails": [
+        {
+          "areaSqft": 100,
+          "firm_name": "Vanila House",
+          "business_address": "Demo business addres",
+          "business_description": "This a dummy business descriptionn",
+          "firm_estd_date": "2022-09-21",
+          "holding_no": "123456789012345",
+          "landmark": "demo landmar",
+          "new_ward_no": "1",
+          "pincode": "123456",
+          "premisesOwner": "mr Premises ownerd",
+          "ward_no": 1
+        }
+      ],
+      "initialbusinessDetail": [
+        {
+          "applyWith": "1",
+          "firmType": "1",
+          "noticeDate": "",
+          "noticeNo": "1",
+          "ownershipType": "1"
+        }
+      ],
+      "licenseDetails": [
+        {
+          "denialAmount": "0",
+          "licenseCharge": "300",
+          "licenseFor": "1",
+          "paymentMode": "1",
+          "penalty": "20",
+          "totalCharge": "320"
+        }
+      ],
+      "businessOwnerName": "Mira Fleming",
+      "email": "qoluzod@mailinator.com",
+      "guardianName": "Ima Manning",
+      "mobileNo": 1234567894,
+      "natureOfBusiness": "1"
+    },
+    {
+      "id": 2,
+      "firm_name": "Social Club",
+      "application_no": "APN123456873",
+      "license_no": "RAN1234586854",
+      "ward_no": 1,
+      "address": "Demo address",
+      "valid_upto": "2023-08-19"
+    },
+    {
+      "id": 3,
+      "firm_name": "Micky's world",
+      "application_no": "APN123456874",
+      "license_no": "RAN1234586852",
+      "ward_no": 1,
+      "address": "Demo address",
+      "valid_upto": "2023-08-19"
+    }
+  ],
+  "prop_data": [
+    {
+      "id": 1,
+      "holding_no": "1234567890123A1",
+      "ward_no": 1,
+      "business_address": "Demo business address",
+      "landmark": "demo landmark",
+      "pin_code": 123456,
+      "premises_owner": "mr Premises owner",
+      "business_description": "This a dummy business description",
+      "firm_name": "winter castle"
+    }
+  ],
+  "cash_verification": [
+    {
+      "id": 1,
+      "emp_name": "Arvind Kumar",
+      "prop_amt": 0.00,
+      "gbsaf_amt": 100.00,
+      "water_amt": 200.00,
+      "trade_amt": 520.00,
+      "total_amount": 520.00,
+      "verified_amt": 520,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "emp_name": "Manish Kumar",
+      "prop_amt": 0.00,
+      "gbsaf_amt": 300.00,
+      "water_amt": 0.00,
+      "trade_amt": 0.00,
+      "total_amount": 300.00,
+      "verified_amt": 100,
+      "status": 0
+    }
+  ],
+  "vel": [
+    {
+      "application_no": "APN203546754",
+      "license_no": "RAN12053647",
+      "ward_no": "12A",
+      "firm_owner_name": "Mr Firm Owner",
+      "id":1
+    },
+    {
+      "application_no": "APN203546896",
+      "license_no": "RAN12053458",
+      "ward_no": "15A",
+      "firm_owner_name": "Mr Secondary Owner",
+      "id":2
+    },
+    {
+      "application_no": "APN203546896",
+      "license_no": "RAN12053458",
+      "ward_no": "15A",
+      "firm_owner_name": "Mr Secondary Owner",
+      "id":3
+    },
+    {
+      "application_no": "APN203546896",
+      "license_no": "RAN12053458",
+      "ward_no": "15A",
+      "firm_owner_name": "Mr Secondary Owner",
+      "id":4
+    }
+  ]
+}

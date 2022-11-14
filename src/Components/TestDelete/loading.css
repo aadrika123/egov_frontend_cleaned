@@ -1,0 +1,160 @@
+.animaterocke {
+  left: 50%;
+  animation: mov 2s linear infinite;
+}
+
+@keyframes mov {
+  0% {
+    top: 100vh;
+    width: 100px;
+  }
+
+  20% {
+    top: 50vh;
+    width: 100px;
+    transform: rotate(0deg);
+  }
+
+  30% {
+    top: 50vh;
+    width: 250px;
+  }
+
+  40% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+    top: 50vh;
+  }
+
+  60% {
+    top: 50vh;
+  }
+
+  70% {
+    top: 50vh;
+  }
+
+  100% {
+    top: -100vh;
+  }
+}
+
+.animaterocket1 {
+  left:0;
+  right:0;
+  bottom: 100px;
+  animation: mov 3s linear infinite;
+}
+
+.animaterocketimg {
+  /* left: 30%; */
+  width: 100px;
+  /* animation: mov 2s linear infinite; */
+}
+
+
+
+@keyframes mov {
+  0% {
+    bottom: 100px;
+  }
+
+
+  100% {
+    bottom: 800px;
+   
+  }
+}
+
+
+
+
+.animaterocket2 {
+  /* left: 50%; */
+  animation: mov2 2s linear infinite;
+}
+
+@keyframes mov2 {
+  0% {
+    right: 6px;
+  }
+
+  20% {
+    right: 50px;
+  }
+
+  100% {
+    right: 50px
+  }
+
+}
+
+.animaterocket3 {
+  /* left: 50%; */
+  animation: mov3 2s linear infinite;
+}
+
+@keyframes mov3 {
+  0% {
+    right: 0px;
+  }
+
+  10% {
+    right: 30px;
+  }
+
+  100% {
+    right: 30px
+  }
+
+}
+.oneRocket {
+  position: relative;
+  transform: rotate(90deg);
+  left: 0;
+  top: 0;
+  width: 70px;
+  animation: movoneRocket 2s linear infinite;
+}
+.twoRocket {
+  position: relative;
+  transform: rotate(90deg);
+  left: 10%;
+  top: 0;
+  width: 100px;
+  animation: movoneRocket 3.5s linear infinite;
+}
+.threeRocket {
+  position: relative;
+  transform: rotate(90deg);
+  left: -10%;
+  top: 0;
+  width: 100px;
+  animation: movoneRocket 3s linear infinite;
+}
+.fourRocket {
+  position: relative;
+  transform: rotate(90deg);
+  left: -10%;
+  top: 0;
+  width: 80px;
+  animation: movoneRocket 4s linear infinite;
+}
+
+@keyframes movoneRocket {
+  0% {
+    left: 10%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 100%
+  }
+
+}
