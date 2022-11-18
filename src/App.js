@@ -81,6 +81,7 @@ import TradeMailbox from 'Pages/Trade/TradeMailbox/TradeMailbox';
 import WaterMailbox from 'Pages/Water/WaterMailbox/WaterMailbox';
 import WorkflowMaster from 'Pages/Workflow/WorkflowMaster/WorkflowMaster';
 import PropertyRoutes from 'Pages/Property/PropertyRoutes';
+import ObjectionRectification from 'Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionRectification';
 
 
 
@@ -188,6 +189,7 @@ function App(props) {
               <Route path='/colony' element={<ColonySafApplicationFormIndex />} />
               <Route path='/legacy' element={<LegacyEntryFormIndex />} />
               <Route path='/objection' element={<ObjectionFormIndex />} />
+              <Route path="/objection-rectification" element={<ObjectionRectification/>} />
               <Route path='/saf-entry' element={<SafEntryScreen />} />
               <Route path='/tcform' element={<TcVerficationFormIndex />} />
               <Route path='/da-verify' element={<PropertySafDocumentVerify />} />
