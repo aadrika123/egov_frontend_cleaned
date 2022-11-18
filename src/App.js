@@ -86,6 +86,7 @@ import PropertyObjectionWorkflowIndex from 'Pages/Property/workflow/PropertyObje
 import CitizenRegistrationWorkflowIndex from 'Pages/Property/workflow/CitizenRegistrationWorkflow/CitizenRegistrationWorkflowIndex';
 import PropertyConcessionWorkflowIndex from 'Pages/Property/workflow/PropertyConcessionWorkflow/PropertyConcessionWorkflowIndex';
 import PropertyRoutes from 'Pages/Property/PropertyRoutes';
+import ObjectionRectification from 'Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionRectification';
 
 
 
@@ -200,6 +201,7 @@ function App(props) {
               <Route path='/colony' element={<ColonySafApplicationFormIndex />} />
               <Route path='/legacy' element={<LegacyEntryFormIndex />} />
               <Route path='/objection' element={<ObjectionFormIndex />} />
+              <Route path="/objection-rectification" element={<ObjectionRectification/>} />
               <Route path='/saf-entry' element={<SafEntryScreen />} />
               <Route path='/tcform' element={<TcVerficationFormIndex />} />
               <Route path='/da-verify' element={<PropertySafDocumentVerify />} />
