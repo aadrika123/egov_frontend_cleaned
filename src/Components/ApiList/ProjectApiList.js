@@ -27,7 +27,9 @@ export default function ProjectApiList() {
         api_approveRejectForm: `${baseUrl}/api/property/saf/approvalrejection`,
 
          //back to citizen
-         api_backToCitizen: `${baseUrl}/api/property/saf/back-to-citizen`
+         api_backToCitizen: `${baseUrl}/api/property/saf/back-to-citizen`,
+         //back to citizen
+         api_postPropertyTaxCalculatorData: `${baseUrl}/api/property/postPropertyTaxCalculatorData`
 
 
     }

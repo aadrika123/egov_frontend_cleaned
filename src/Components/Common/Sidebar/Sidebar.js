@@ -98,6 +98,7 @@ function Sidebar(props) {
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_11`, menuName: 'Colony Form', menuPath: '/colony', subMenu: [] },
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_12`, menuName: 'Objection Form 5', menuPath: '/objection', subMenu: [] },
     { icon: <FcFlowChart size={14} />, module: 'property', id: `property_13`, menuName: 'Saf Entry', menuPath: '/saf-entry', subMenu: [] },
+    { icon: <FcFlowChart size={14} />, module: 'property', id: `property_13`, menuName: 'Tax Cal', menuPath: '/taxcal', subMenu: [] },
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_14`, menuName: 'Tc Verification', menuPath: '/tcform', subMenu: [] },
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_15`, menuName: 'Da Verify', menuPath: '/da-verify', subMenu: [] },
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_16`, menuName: 'Payment-Verify', menuPath: '/payment-verification', subMenu: [] },
@@ -107,6 +108,7 @@ function Sidebar(props) {
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_20`, menuName: 'Saf-Demand', menuPath: '/saf-demand', subMenu: [] },
     // { icon: <FcFlowChart size={14} />, module: 'property', id: `property_21`, menuName: 'Saf-Payment', menuPath: '/saf-payment', subMenu: [] },
     { icon: <FcFlowChart size={14} />, module: 'property', id: `property_22`, menuName: 'Citizen-Saf-Form', menuPath: '/citizen-saf-entry-screen', subMenu: [] },
+    { icon: <FcFlowChart size={14} />, module: 'property', id: `property_22`, menuName: 'Property-Dashboard', menuPath: '/dashboard-property', subMenu: [] },
 
 
     // ============================================= 2 Water Menu =============================================

@@ -80,11 +80,6 @@ import SafFormPayment from 'Pages/Property/PropertyEntryForms/SafFormReview/SafF
 import TradeMailbox from 'Pages/Trade/TradeMailbox/TradeMailbox';
 import WaterMailbox from 'Pages/Water/WaterMailbox/WaterMailbox';
 import WorkflowMaster from 'Pages/Workflow/WorkflowMaster/WorkflowMaster';
-import PropertyHarvestingWorkflowIndex from 'Pages/Property/workflow/PropertyHarvestingWorkflow/PropertyHarvestingWorkflowIndex';
-import PropertySafWorkflowIndex from 'Pages/Property/workflow/PropertySafWorkflow/PropertySafWorkflowIndex';
-import PropertyObjectionWorkflowIndex from 'Pages/Property/workflow/PropertyObjectionWorkflow/PropertyObjectionWorkflowIndex';
-import CitizenRegistrationWorkflowIndex from 'Pages/Property/workflow/CitizenRegistrationWorkflow/CitizenRegistrationWorkflowIndex';
-import PropertyConcessionWorkflowIndex from 'Pages/Property/workflow/PropertyConcessionWorkflow/PropertyConcessionWorkflowIndex';
 import PropertyRoutes from 'Pages/Property/PropertyRoutes';
 
 
@@ -162,13 +157,6 @@ function App(props) {
               <Route path='/user-permission' element={<UserPermission />} />
               <Route path='/user-role' element={<UserRole />} />
 
-              {/* <Route path='/workflow-mstr' element={<WorkflowMaster />} />
-              <Route path='/saf-workflow' element={<PropertySafWorkflowIndex />} />
-              <Route path='/concession-workflow' element={<PropertyConcessionWorkflowIndex />} />
-              <Route path='/harvesting-workflow' element={<PropertyHarvestingWorkflowIndex />} />
-              <Route path='/objection-workflow' element={<PropertyObjectionWorkflowIndex />} />
-              <Route path='/citizen-reg-workflow' element={<CitizenRegistrationWorkflowIndex />} /> */}
-
               <Route path='/ck' element={<SuccessCheck />} />
               <Route path='/multi1' element={<Multi />} />
               <Route path='/multi2' element={<Multi2 />} />
@@ -215,7 +203,7 @@ function App(props) {
               <Route path='/accounts' element={<AccountsIndex />} />
 
               {/* Dashboards */}
-              <Route path='/dashboard-property' element={<Dashboard_Property />} />
+              
               <Route path='/dashboard-water' element={<Dashboard_Water />} />
               <Route path='/dashboard-trade' element={<Dashboard_Trade />} />
               <Route path='/dashboard-advertisement' element={<Dashboard_Advertisement />} />
@@ -230,7 +218,7 @@ function App(props) {
               {/* test */}
               <Route path='/birds' element={<Birds />} />
               <Route path='/load2' element={<LoadingAnimation2 />} />
-              <Route path='/taxcal' element={<PropertyTaxCalculatorIndex />} />
+              
               <Route path='/bodoc' element={<BoDocUpload />} />
               <Route path='/saf-review' element={<SafFormReview />} />
               <Route path='/saf-demand' element={<SafFormDemand />} />
