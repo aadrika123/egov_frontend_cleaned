@@ -316,7 +316,7 @@ function ConcessionForm(props) {
               </div>
 
             {/* Concession Form */}
-            <div className="ml-4 form-group mb-6 col-span-3 md:col-span-2 md:px-4">
+            <div className="md:ml-4 form-group mb-6 col-span-3 md:col-span-2 md:px-4">
                 <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">
                   <small className=" mt-1 text-sm font-semibold text-red-600 inline ">
                     *
@@ -326,7 +326,7 @@ function ConcessionForm(props) {
                 <input
                   {...formik.getFieldProps("concessionDoc")}
                   type="file"
-                  className="form-control block md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
+                  className="form-control block md:w-5/6 w-full px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                 />
                 <span className="text-red-600 absolute text-xs">
                   {formik.touched.concessionDoc && formik.errors.concessionDoc
