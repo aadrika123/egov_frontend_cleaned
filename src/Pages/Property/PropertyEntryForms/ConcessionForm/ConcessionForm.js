@@ -19,7 +19,6 @@ import { useNavigate } from "react-router-dom";
 
 function ConcessionForm(props) {
   const { entryForm } = apiList();
-  console.log("header => ", ApiHeader2());
 
   const [genderUpload, setgenderUpload] = useState();
   const [dobUpload, setdobUpload] = useState();
@@ -28,6 +27,7 @@ function ConcessionForm(props) {
   const [storeData, setstoreData] = useState([]);
   const [stringData, setstringData] = useState({});
   const [resultData, setresultData] = useState({});
+  const [concessionUpload, setconcessionUpload] = useState()
 
   const navigate = useNavigate()
 
@@ -57,6 +57,7 @@ function ConcessionForm(props) {
       dobDoc: "",
       speciallyAbledDoc: "",
       armedForceDoc: "",
+      concessionDoc: ""
     },
 
     onSubmit: (values) => {
@@ -77,6 +78,7 @@ function ConcessionForm(props) {
     fd.append("genderDoc", genderUpload);
     fd.append("speciallyAbledDoc", speciallyUpload);
     fd.append("armedForceDoc", armedForceUpload);
+    fd.append("concessionDoc", concessionUpload)
 
     console.log("--2-- before fetch...", fd);
 
@@ -114,6 +116,10 @@ function ConcessionForm(props) {
       let file = e.target.files[0];
       setarmedForceUpload(e.target.files[0]);
       console.log("--4-file on change..", file);
+    } else if (e.target.name == "concessionDoc"){
+      let file = e.target.files[0];
+      setconcessionUpload(e.target.files[0])
+      console.log("--5-- concession file changed.. ", file)
     }
   };
 
@@ -305,6 +311,26 @@ function ConcessionForm(props) {
                 <span className="text-red-600 absolute text-xs">
                   {formik.touched.armedForceDoc && formik.errors.armedForceDoc
                     ? formik.errors.armedForceDoc
+                    : null}
+                </span>
+              </div>
+
+            {/* Concession Form */}
+            <div className="ml-4 form-group mb-6 col-span-3 md:col-span-2 md:px-4">
+                <label className="form-label inline-block mb-1 text-gray-600 text-sm font-semibold">
+                  <small className=" mt-1 text-sm font-semibold text-red-600 inline ">
+                    *
+                  </small>
+                  Concession Form
+                </label>
+                <input
+                  {...formik.getFieldProps("concessionDoc")}
+                  type="file"
+                  className="form-control block md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
+                />
+                <span className="text-red-600 absolute text-xs">
+                  {formik.touched.concessionDoc && formik.errors.concessionDoc
+                    ? formik.errors.concessionDoc
                     : null}
                 </span>
               </div>
