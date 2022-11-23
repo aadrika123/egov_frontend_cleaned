@@ -20,7 +20,7 @@ import ObjectionRectificationTable from './ObjectionRectificationTable'
 
 const ObjectionRectification = () => {
 
-  const [updation, setupdation] = useState(false)
+  const [updation, setupdation] = useState(true)
   const [ownerData, setownerData] = useState()
 
   const {postHolding} = apiLinks()
@@ -50,7 +50,10 @@ const ObjectionRectification = () => {
       console.log("--3-- holding no. submitted", res.data)
       setownerData(res.data)
     })
-    .catch((err) => console.log('--3-- holding submission error => ', err))
+    .catch((err) => {
+      console.log('--3-- holding submission error => ', err)
+      toast.error("Something went wrong !!")
+    })
   }
 
   return (
@@ -69,7 +72,7 @@ const ObjectionRectification = () => {
       </h1>
 
       {/* Main */}
-      <div className='mt-[4rem] mx-8'>
+      <div className='mt-[4rem] md:mx-8'>
 
        {updation ? <ObjectionRectificationTable ownerData={ownerData}/> : <form onSubmit={formik.handleSubmit} onChange={formik.handleChange} className='animate__animated animate__fadeInDown flex flex-wrap flex-col md:flex-row md:space-x-4 space-y-4 md:items-center md:justify-evenly justify-center items-evenly border-t-2 border-l-2 border-zinc-100 rounded-md shadow-lg py-3 pb-6 bg-sky-100 hover:bg-sky-200 transition-all duration-300 px-4'>
 
@@ -78,7 +81,7 @@ const ObjectionRectification = () => {
           </div>
 
           <div>
-            <input type="text" name="holdingNo" id="holdingNo" maxLength={15} className="form-control block w-[35rem]  px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
+            <input type="text" name="holdingNo" id="holdingNo" maxLength={15} className="form-control block md:w-[35rem] w-[17rem] px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
           </div>
 
           <div>

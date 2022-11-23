@@ -6,14 +6,74 @@
 // Description : Concession entry form Index page
 //////////////////////////////////////////////////////////////////////
 
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ImUpload2 } from "react-icons/im";
 import ConcessionForm from "./ConcessionForm";
 import { TbWebhook } from "react-icons/tb";
+import 'animate.css'
+import { useFormik } from "formik";
+import * as yup from 'yup'
+import apiLinks from 'Components/ApiList/ConcessionApi'
+import axios from "axios";
+import ApiHeader from "Components/ApiList/ApiHeader";
+import {RiBuilding2Fill} from 'react-icons/ri'
+import 'animate.css'
 
 function ConcessionFormIndex() {
+
+  const [msg, setmsg] = useState('')
+  const [updation, setupdation] = useState(true)
+
+  const {postHolding} = apiLinks()
+
+  const validationSchema = yup.object({
+    holdingNo : yup.string().required("Enter holding number")
+  })
+
+  const formik = useFormik({
+    initialValues: {
+      holdingNo : ''
+    }, 
+
+    onSubmit: (values) => {
+      console.log("--1-- holding no. => ", values)
+      submitHoldingNo(values)
+    }, validationSchema
+
+  })
+
+  console.log("updattion status => ", updation)
+
+  const submitHoldingNo = (values) => {
+    console.log("--2-- entering to submit function")
+    axios.post(postHolding,values, ApiHeader())
+    .then((res) => {
+      console.log("--3-- holding no. submitted", res.data.message)
+      setmsg(res.data.message)
+       if(res.data.message == "True"){
+        toast.success("Found successfully...")
+        setupdation(true)
+      } else if(res.data.message == "False"){
+         toast.error("Not found ...")
+         setupdation(false)
+      }else{
+        return null
+      }
+    })
+    .catch((err) => {
+      console.log('--3-- holding submission error => ', err)
+      toast.error("Something went wrong !!")
+    })
+  }  
+
+  const backFun = () => {
+    setupdation(false)
+    formik.setFieldValue("holdingNo", '')
+  }
+
+  // ================================================== Old Code ================================================================//
   const [formIndex, setFormIndex] = useState(1); //formindex specifies type of form like basicdetails at index 1 ...
   const [animateform1, setAnimateform1] = useState("translate-x-0"); //slide animation control state for BasicDetails form
   const [animateform2, setAnimateform2] = useState("pl-20 translate-x-full"); //slide animation control state for PropertyAddressDetails form
@@ -22,8 +82,9 @@ function ConcessionFormIndex() {
   const [animateform5, setAnimateform5] = useState("pl-20 translate-x-full"); //slide animation control state for FloorDetails form
   const [submitStatus, setSubmitStatus] = useState(false); //checking full form filled status to toggle final submit button
   const [allFormData, setAllFormData] = useState({});
+  
 
-  const backFun = (formIndex) => {
+  const backFunD = (formIndex) => {
     let tempFormIndex = formIndex;
     if (tempFormIndex == 2) {
       //backward by current form index 2
@@ -87,6 +148,10 @@ function ConcessionFormIndex() {
     // setAllFormData({...allFormData,formData}) //this is going to replace upcoming data since has same formData key all the time
     setAllFormData({ ...allFormData, [key]: formData });
   };
+
+  // ================================================================================================================================
+
+
   console.log("all form data ", allFormData);
   return (
     <>
@@ -97,7 +162,29 @@ function ConcessionFormIndex() {
         </span>
       </div>
 
-      <div className={`${animateform1} transition-all relative`}>
+
+      <div className="mt-6">
+      {updation ? <ConcessionForm backFun={backFun}/> : <form onSubmit={formik.handleSubmit} onChange={formik.handleChange} className='animate__animated animate__fadeInDown flex flex-wrap flex-col md:flex-row md:space-x-4 space-y-4 md:items-center md:justify-evenly justify-center items-evenly border-t-2 border-l-2 border-zinc-100 rounded-md shadow-lg py-3 pb-6 bg-sky-100 hover:bg-sky-200 transition-all duration-300 px-4'>
+
+<div>
+  <label className="form-label inline-block mt-2 text-gray-600 text-sm font-semibold" htmlFor="holdingNo">Holding No. (15 digits) : </label>
+</div>
+
+<div>
+  <input type="text" name="holdingNo" id="holdingNo" maxLength={15} className="form-control block md:w-[35rem] w-[17rem] px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
+</div>
+
+<div>
+  <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
+</div>
+
+</form> }
+      </div>
+
+
+
+{/* ==================================================== Old Code ================================================================== */}
+      {/* <div className={`${animateform1} transition-all relative`}>
         <ConcessionForm
           collectFormDataFun={collectAllFormData}
           submitFun={submitButtonToggle}
@@ -105,14 +192,14 @@ function ConcessionFormIndex() {
           backFun={backFun}
           nextFun={nextFun}
         />
-      </div>
+      </div> */}
       {/* collectDataFun to receive form data on every save&next */}
       {/* submitFun to activate final submit button when all form is filled */}
       {/* toastFun to activate toast notification via receiving toast message */}
       {/* backFun to go back from any specific form level */}
       {/* nextFun to go next from any specific form level */}
 
-      {submitStatus && (
+      {/* {submitStatus && (
         <div className="flex items-center justify-center">
           <button
             type="submit"
@@ -121,7 +208,10 @@ function ConcessionFormIndex() {
             Submit Form <ImUpload2 className="inline text-xl" />
           </button>
         </div>
-      )}
+      )} */}
+      {/* ========================================================================================================================== */}
+
+
     </>
   );
 }

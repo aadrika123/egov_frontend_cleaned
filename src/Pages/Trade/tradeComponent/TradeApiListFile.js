@@ -21,7 +21,8 @@ export const TRADE =
 }
 
 export const HEADER = () => {
-    let token = JSON.parse(window.localStorage.getItem('token'))
+    let token = window.localStorage.getItem('token')
+
     let HEADER = {
         headers: {
             Authorization: `Bearer ${token}`,

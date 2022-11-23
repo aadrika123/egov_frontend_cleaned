@@ -10,11 +10,11 @@ const ConcessionApi = () => {
     
     const baseUrl = 'http://192.168.0.205:8000/api/property/concession'
 
-    const token = '1756|TboTCPMMkGagRka00NStFFK0xsFOqhXkd7lAAYfc'
-
     let apiList = {
         
         entryForm : `${baseUrl}/UpdateDocuments/1`,
+
+        postHolding : `${baseUrl}/postHolding`
 
     }
 

@@ -7,17 +7,15 @@
 //////////////////////////////////////////////////////////////////////
 
 export default function ApiHeader2() {
-    let token = JSON.parse(window.localStorage.getItem('token'))
-    const header = {
-        headers:
-        {
-            Authorization: `Bearer ${token}`,
-            'Content-type' : 'multipart/form-data'
-        }
-    }
-  return header
+  let token = window.localStorage.getItem("token");
+  const header = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  return header;
 }
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // Export to: ConcessionForm.js, ObjectionRectification.js, ObjectionRectificationTable.js

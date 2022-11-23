@@ -10,10 +10,11 @@ import React, {useState, useEffect} from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
-import ApiHeader2 from 'Components/ApiList/ApiHeader2'
+import ApiHeader from 'Components/ApiList/ApiHeader'
 import apiLinks from 'Components/ApiList/ObjectionRectificationApi'
 import 'animate.css'
 import {Toggle} from 'react-toggle-component'
+import { toast, ToastContainer } from 'react-toastify'
 
 const ObjectionRectificationTable = (props) => {
 
@@ -25,13 +26,13 @@ const ObjectionRectificationTable = (props) => {
 // const [csafMember, setcsafMember] = useState(false)
 const [ownerData, setownerData] = useState()
 const [nameUpload, setnameUpload] = useState()
-const [mobileUpload, setmobileUpload] = useState()
+const [json, setjson] = useState()
 const [addressUpload, setaddressUpload] = useState()
 const [safMemberUpload, setsafMemberUpload] = useState()
 
-useEffect(() => {
-  setownerData(props.ownerData[0])
-}, [])
+// useEffect(() => {
+//   setownerData(props?.ownerData[0])
+// }, [])
 
     const formik = useFormik({
         initialValues: {
@@ -52,38 +53,35 @@ useEffect(() => {
 
     })
 
-    const submitData = () => {
+    const submitData = (values) => {
         let fd = new FormData();
-        fd.append("name", formik.values.name);
-        fd.append("mobileNo", formik.values.mobileNo);
-        fd.append("address", formik.values.address);
-        fd.append("safMember", formik.values.safMember);
+        fd.append("name", values.name);
+        fd.append("mobileNo", values.mobileNo);
+        fd.append("address", values.address);
+        fd.append("safMember", values.safMember);
         fd.append("nameDoc", nameUpload);
-        fd.append("mobileNoDoc", mobileUpload);
         fd.append("addressDoc", addressUpload);
         fd.append("safMemberDoc", safMemberUpload);
     
         console.log("--2-- before fetch...", fd);
     
         axios
-          .post(postRectification, fd, ApiHeader2())
+          .post(postRectification, fd, ApiHeader())
           .then(function (response) {
-            console.log("successfully posted application data  => ", response, "\n result data =>", fd);
+            console.log("successfully posted application data  => ", response.data, "\n result data =>", fd)
+            toast.success("Submitted successfully");
           })
           .catch(function (error) {
-            console.log("error posting application data => ", error,  "\n result data =>", fd);
+            console.log("error posting application data => ", error,  "\n result data =>", fd)
+            toast.error("Something went wrong !!")
           });
     }
 
     const handleChange = (e) => {
         if (e.target.name == "nameDoc") {
           let file = e.target.files[0];
-          setmobileUpload(e.target.files[0]);
+          setnameUpload(e.target.files[0]);
           console.log("--1-- name file on change..", file);
-        } else if (e.target.name == "mobileNoDoc") {
-          let file = e.target.files[0];
-          setmobileUpload(e.target.files[0]);
-          console.log("--2-- mobile file on change..", file);
         } else if (e.target.name == "addressDoc") {
           let file = e.target.files[0];
           setaddressUpload(e.target.files[0]);
@@ -96,6 +94,10 @@ useEffect(() => {
       };
 
   return (
+    <>
+    
+    <ToastContainer position="top-right" autoClose={2000} />
+
     <div className='animate__animated animate__fadeInUp'>
 
     {/* Toggle */}
@@ -163,7 +165,7 @@ useEffect(() => {
 
             </div> */}
 
-    <form onSubmit={formik.handleSubmit} onChange={handleChange} className='transition-all duration-300'>
+    <form onSubmit={formik.handleSubmit} className='transition-all duration-300'>
 
             
 
@@ -177,30 +179,36 @@ useEffect(() => {
                     
                    <tr className='h-[2.3rem] text-sm text-center bg-zinc-100 hover:bg-zinc-200 rounded-md shadow-md animate__animated animate__lightSpeedInRight animate__delay-1s'>
                     <td className='font-semibold'>Name</td>
-                    <td>{ownerData?.name}</td>
-                    <td> <input type="text" name="name" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
-                    <td> <input type="file" name="nameDoc" id="" className='' /> </td>
+                    <td>
+                      {/* {ownerData?.name} */}
+                      </td>
+                    <td> <input type="text" onChange={formik.handleChange} name="name" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
+                    <td> <input type="file" onChange={handleChange} name="nameDoc" id="" className='' /> </td>
                 </tr>
 
                <tr className='h-[2.3rem] text-sm text-center bg-zinc-100 hover:bg-zinc-200 rounded-md shadow-md animate__animated animate__lightSpeedInRight animate__delay-1s'>
                     <td className='font-semibold'>Mobile No</td>
-                    <td>{ownerData?.mobileNo}</td>
-                    <td> <input type="text" name="mobileNo" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
+                    <td>
+                      {/* {ownerData?.mobileNo} */}
+                      </td>
+                    <td> <input type="text" onChange={formik.handleChange} name="mobileNo" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
                     <td> <i>N/A</i> </td>
                 </tr>
 
                 <tr className='h-[2.3rem] text-sm text-center bg-zinc-100 hover:bg-zinc-200 rounded-md shadow-md animate__animated animate__lightSpeedInRight animate__delay-1s'>
                     <td className='font-semibold'>Address</td>
-                    <td>{ownerData?.address}</td>
-                    <td> <input type="text" name="address" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
-                    <td> <input type="file" name="addressDoc" id="" className='' /> </td>
+                    <td>
+                      {/* {ownerData?.address} */}
+                      </td>
+                    <td> <input type="text" onChange={formik.handleChange} name="address" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
+                    <td> <input type="file" onChange={handleChange} name="addressDoc" id="" className='' /> </td>
                 </tr>
 
                <tr className='h-[2.3rem] text-sm text-center bg-zinc-100 hover:bg-zinc-200 rounded-md shadow-md animate__animated animate__lightSpeedInRight animate__delay-1s'>
                     <td className='font-semibold'>Saf Members</td>
                     <td>xyz</td>
-                    <td> <input type="text" name="safMember" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
-                    <td> <input type="file" name="safMemberDoc" id="" className='' /> </td>
+                    <td> <input type="text" onChange={formik.handleChange} name="safMember" id="" className='focus:outline-none rounded-md w-full h-[2rem] px-4 py-1 bg-zinc-100 text-center' placeholder='Enter new data...' /> </td>
+                    <td> <input type="file" onChange={handleChange} name="safMemberDoc" id="" className='' /> </td>
                 </tr>
             
             </table>
@@ -210,6 +218,9 @@ useEffect(() => {
         </form> 
     
     </div>
+    
+    </>
+    
   )
 }
 

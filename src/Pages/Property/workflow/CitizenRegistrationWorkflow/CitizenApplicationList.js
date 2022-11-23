@@ -7,83 +7,90 @@
 //    Component  - CitizenApplicationList (closed)
 //    DESCRIPTION - CitizenApplicationList Component
 //////////////////////////////////////////////////////////////////////////////////////
-import { useState, useEffect } from 'react'
-import { useQuery } from 'react-query'
-import axios from 'axios'
-import ListTable from 'Components/Common/ListTable/ListTable'
-import LoadingAnimation2 from 'Components/TestDelete/LoadingAnimation2'
-import ErrorPage from 'Components/TestDelete/ErrorPage'
+import { useState, useEffect } from "react";
+import { useQuery } from "react-query";
+import axios from "axios";
+import ListTable from "Components/Common/ListTable/ListTable";
+import LoadingAnimation2 from "Components/TestDelete/LoadingAnimation2";
+import ErrorPage from "Components/TestDelete/ErrorPage";
 
 function CitizenApplicationList(props) {
+  const COLUMNS = [
+    {
+      Header: "#",
+      // accessor: 'ward_no'
+      Cell: ({ row }) => <div className="pr-2">{row.index + 1}</div>,
+    },
+    // {
+    //     Header: 'Ward No.',
+    //     accessor: 'ward_no'
+    // },
+    {
+      Header: "Citizen-Name",
+      accessor: "user_name",
+    },
+    {
+      Header: "Email",
+      accessor: "email",
+    },
+    {
+      Header: "Mobile",
+      accessor: "mobile",
+    },
 
-    const COLUMNS = [
-
-        {
-            Header: '#',
-            // accessor: 'ward_no'
-            Cell: ({ row }) => (
-                <div className='pr-2'>{row.index + 1}</div>
-            )
-        },
-        // {
-        //     Header: 'Ward No.',
-        //     accessor: 'ward_no'
-        // },
-        {
-            Header: 'Citizen-Name',
-            accessor: 'user_name'
-        },
-        {
-            Header: 'Email',
-            accessor: 'email'
-        },
-        {
-            Header: 'Mobile',
-            accessor: 'mobile'
-        },
-
-        {
-            Header: 'ULB',
-            accessor: 'ulb_name'
-        },
-        {
-            Header: 'Action',
-            accessor: 'id',
-            Cell: ({ cell }) => (
-                <button onClick={() => props.fun(cell.row.values.id)} className='bg-sky-200 px-3 py-1 rounded-lg shadow-lg hover:shadow-xl hover:bg-sky-800 
-                hover:text-white text-black'>
-                    View
-                </button>
-            )
-        }
-    ]
-    let token = JSON.parse(window.localStorage.getItem('token'))
-    const header = {
-        headers:
-        {
-            Authorization: `Bearer ${token}`,
-            Accept: 'application/json',
-        }
+    {
+      Header: "ULB",
+      accessor: "ulb_name",
+    },
+    {
+      Header: "Action",
+      accessor: "id",
+      Cell: ({ cell }) => (
+        <button
+          onClick={() => props.fun(cell.row.values.id)}
+          className="bg-sky-200 px-3 py-1 rounded-lg shadow-lg hover:shadow-xl hover:bg-sky-800 
+                hover:text-white text-black"
+        >
+          View
+        </button>
+      ),
+    },
+  ];
+  let token = window.localStorage.getItem("token");
+  const header = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+    },
+  };
+  const { isLoading, data, isError, error } = useQuery(
+    "propertySafApplicationList-query",
+    () => {
+      // return axios.get("http://localhost:3001/citizenRegistraiton");
+      return axios.get("http://192.168.0.166/api/get-all-citizens", header);
     }
-    const { isLoading, data, isError, error } = useQuery("propertySafApplicationList-query", () => {
-        // return axios.get("http://localhost:3001/citizenRegistraiton");
-        return axios.get("http://192.168.0.166/api/get-all-citizens", header);
-    });
-    if (!isLoading) {
-        console.log('data at saf-workflow ',data)
-    }
-    return (
-        <>
-           {isLoading && <LoadingAnimation2/>}
-            {isError && <ErrorPage/>}
-            {!isLoading && (!isError && <ListTable assessmentType={false} columns={COLUMNS} dataList={data?.data} />)}
-        </>
-    )
+  );
+  if (!isLoading) {
+    console.log("data at saf-workflow ", data);
+  }
+  return (
+    <>
+      {isLoading && <LoadingAnimation2 />}
+      {isError && <ErrorPage />}
+      {!isLoading && !isError && (
+        <ListTable
+          assessmentType={false}
+          columns={COLUMNS}
+          dataList={data?.data}
+        />
+      )}
+    </>
+  );
 }
 
-export default CitizenApplicationList
+export default CitizenApplicationList;
 /**
  * Exported to :
  * 1. PropertySafInbox Component
- * 
+ *
  */

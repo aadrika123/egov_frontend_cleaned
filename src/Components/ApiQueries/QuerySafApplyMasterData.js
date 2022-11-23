@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 
-let token = JSON.parse(window.localStorage.getItem('token'))
+let token = window.localStorage.getItem('token')
 const header = {
     headers:
     {

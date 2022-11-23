@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import api_safInboxList from 'Components/ApiList/api_safInboxList'
 
-let token = JSON.parse(window.localStorage.getItem('token'))
+let token = window.localStorage.getItem('token')
 const header = {
     headers:
     {

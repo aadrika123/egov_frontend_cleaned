@@ -12,10 +12,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { getCurrentDate } from "Components/Common/PowerUps/PowerupFunctions";
 import apiList from "../../../../Components/ApiList/ConcessionApi";
-import ApiHeader2 from "Components/ApiList/ApiHeader2";
+import ApiHeader from "Components/ApiList/ApiHeader";
 import axios from "axios";
 import {toast, ToastContainer} from 'react-toastify'
 import { useNavigate } from "react-router-dom";
+import 'animate.css'
 
 function ConcessionForm(props) {
   const { entryForm } = apiList();
@@ -37,12 +38,16 @@ function ConcessionForm(props) {
     speciallyAbled: yup.string().required("Select specially-abled status"),
     armedForce: yup.string().required("Select armed force status"),
 
-    // genderDoc: yup.string().required("Select gender document"),
-    // dobDoc: yup.string().required("Select DOB document"),
-    // speciallyAbledDoc: yup.string().required("speciallyAbled"),
+    // genderDoc: yup.mixed().required("Select gender document"),
+    // dobDoc: yup.mixed().required("Select DOB document"),
+    // speciallyAbledDoc: yup.string().when("speciallyAbled", (speciallyAbled) => {
+    //   if (speciallyAbled == "yes") {
+    //     return yup.mixed().required("Select specially abled document");
+    //   }
+    // }),
     // armedForceDoc: yup.string().when("armedForce", (armedForce) => {
     //   if (armedForce == "yes") {
-    //     return yup.string().required("Select armed document");
+    //     return yup.mixed().required("Select armed document");
     //   }
     // }),
   });
@@ -64,16 +69,16 @@ function ConcessionForm(props) {
       console.log("--1-- values => ", values);
       submitData(values);
     },
-    // validationSchema,
+    validationSchema,
   });
 
-  const submitData = () => {
+  const submitData = (values) => {
     //creating formData object to send file data
     let fd = new FormData();
-    fd.append("gender", formik.values.remarks);
-    fd.append("dob", formik.values.dob);
-    fd.append("speciallyAbled", formik.values.speciallyAbled);
-    fd.append("armedForce", formik.values.armedForce);
+    fd.append("gender", values.remarks);
+    fd.append("dob", values.dob);
+    fd.append("speciallyAbled", values.speciallyAbled);
+    fd.append("armedForce", values.armedForce);
     fd.append("dobDoc", dobUpload);
     fd.append("genderDoc", genderUpload);
     fd.append("speciallyAbledDoc", speciallyUpload);
@@ -83,7 +88,7 @@ function ConcessionForm(props) {
     console.log("--2-- before fetch...", fd);
 
     axios
-      .post(entryForm, fd, ApiHeader2())
+      .post(entryForm, fd, ApiHeader)
       .then(function (response) {
         console.log(
           "successfully posted => ",
@@ -127,13 +132,13 @@ function ConcessionForm(props) {
     <>
      <ToastContainer position="top-right" autoClose={2000} />
 
-      <h1 className="mt-6 mb-2 font-serif font-semibold absolute text-gray-600">
+      <h1 className="-mt-[1rem] mb-2 font-serif font-semibold text-gray-600">
         <RiBuilding2Fill className="inline mr-2" />
         Concession Details
       </h1>
 
-      <div className="block p-4 w-full md:py-6 shadow-lg bg-white mx-auto absolute top-14 border border-gray-200">
-        <form onSubmit={formik.handleSubmit} onChange={handleChange}>
+      <div className="animate__animated animate__fadeInDown block mt-[rem] p-4 w-full md:w-[75vw] md:py-6 shadow-lg bg-white mx-auto border border-gray-200">
+        <form onSubmit={formik.handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-3">
             {/* Gender */}
             <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 md:px-10">
@@ -144,11 +149,11 @@ function ConcessionForm(props) {
                   </small>
                   Gender
                 </label>
-                <select
+                <select onChange={formik.handleChange}
                   {...formik.getFieldProps("gender")}
                   className="form-control block w-full px-3 py-1.5 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md"
                 >
-                  <option value="" disabled>
+                  <option value="" selected disabled>
                     --Select--
                   </option>
                   <option value="male">Male</option>
@@ -170,7 +175,7 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("genderDoc")}
-                  type="file"
+                  type="file"  onChange={handleChange}
                   className="form-control block w-full md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                   placeholder="Enter new ward no."
                 />
@@ -193,7 +198,7 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("dob")}
-                  type="date"
+                  type="date" onChange={formik.handleChange}
                   className="form-control block w-full  px-3 py-1.5 md:py-1 text-base md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md"
                 />
                 <span className="text-red-600 absolute text-xs">
@@ -211,7 +216,7 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("dobDoc")}
-                  type="file"
+                  type="file"  onChange={handleChange}
                   className="form-control block w-full md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                   placeholder="Enter new ward no."
                 />
@@ -232,7 +237,7 @@ function ConcessionForm(props) {
                   </small>
                   Specially-Abled
                 </label>
-                <select
+                <select onChange={formik.handleChange}
                   {...formik.getFieldProps("speciallyAbled")}
                   className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md"
                 >
@@ -257,7 +262,7 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("speciallyAbledDoc")}
-                  type="file"
+                  type="file"  onChange={handleChange}
                   className="form-control block w-full md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                   placeholder="Enter new ward no."
                 />
@@ -279,7 +284,7 @@ function ConcessionForm(props) {
                   </small>
                   Armed-Force
                 </label>
-                <select
+                <select onChange={formik.handleChange}
                   {...formik.getFieldProps("armedForce")}
                   className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none cursor-pointer shadow-md"
                 >
@@ -304,7 +309,7 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("armedForceDoc")}
-                  type="file"
+                  type="file"  onChange={handleChange}
                   className="form-control block w-full md:w-5/6 px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                   placeholder="Enter new ward no."
                 />
@@ -325,8 +330,8 @@ function ConcessionForm(props) {
                 </label>
                 <input
                   {...formik.getFieldProps("concessionDoc")}
-                  type="file"
-                  className="form-control block md:w-5/6 w-full px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
+                  type="file"  onChange={handleChange}
+                  className="form-control block md:w-[18vw] w-full px-3 py-1.5 md:py-1 text-base md:text-xs font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 cursor-pointer shadow-md"
                 />
                 <span className="text-red-600 absolute text-xs">
                   {formik.touched.concessionDoc && formik.errors.concessionDoc
@@ -336,17 +341,17 @@ function ConcessionForm(props) {
               </div>
             </div>
 
-            <div className="col-span-3 grid grid-cols-2 mb-16 text-center">
-              <div className="md:px-10">
+            <div className="col-span-3 grid grid-cols-2 mb-16 text-start">
+              <div className="md:px-20">
                 {/* <button onClick={() => props.backFun(2)} type="button" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Back</button> */}
-                <button
+                <button onClick={props.backFun}
                   type="button"
                   className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Back
                 </button>
               </div>
-              <div className="md:px-10 ">
+              <div className="md:px-14 text-end md:text-start">
                 <button
                   type="submit"
                   className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight  rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
