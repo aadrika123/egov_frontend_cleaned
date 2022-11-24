@@ -136,9 +136,9 @@ function ObjectionEntryForm(props) {
 
     return (
         <>
-            <h1 className='mt-6 mb-2 font-serif font-semibold absolute text-gray-600'><RiBuilding2Fill className="inline mr-2" />Apply Objection</h1>
+            <h1 className='mt-6 mb-2 font-serif font-semibold  text-gray-600'><RiBuilding2Fill className="inline mr-2" />Apply Objection</h1>
 
-            <div className="block p-4 w-full md:py-6 rounded-lg shadow-lg bg-white mx-auto absolute top-14 ">
+            <div className="block p-4 w-full md:py-6 rounded-lg shadow-lg bg-white mx-auto mt-6 ">
 
                 <form onSubmit={formik.handleSubmit} onChange={handleChange}>
                     <div className="grid grid-cols-1 md:grid-cols-4">
@@ -444,7 +444,7 @@ function ObjectionEntryForm(props) {
 
 
                         {/* Documents */}
-                        <div className={`col-span-4 grid grid-cols-1 md:grid-cols-4  mt-10`}>
+                        <div className={`col-span-4 grid grid-cols-1 md:grid-cols-4  mt-10 border`}>
                             <div className="form-group col-span-4 mb-6 px-2 md:px-4 bg-green-100 shadow-md">
                                 <label className="form-label inline-block mb-1 text-gray-700 text-sm font-semibold">
                                     Documents</label>

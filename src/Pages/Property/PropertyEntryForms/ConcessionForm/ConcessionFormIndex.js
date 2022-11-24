@@ -20,21 +20,25 @@ import axios from "axios";
 import ApiHeader from "Components/ApiList/ApiHeader";
 import {RiBuilding2Fill} from 'react-icons/ri'
 import 'animate.css'
+import { ColorRing } from "react-loader-spinner";
 
 function ConcessionFormIndex() {
 
-  const [msg, setmsg] = useState('')
-  const [updation, setupdation] = useState(true)
+  const [index, setindex] = useState(0)
+  const [updation, setupdation] = useState(false)
+  const [loader, setloader] = useState(false)
 
   const {postHolding} = apiLinks()
 
   const validationSchema = yup.object({
-    holdingNo : yup.string().required("Enter holding number")
+    holdingNo : yup.string().required("Enter holding number"),
+    wardId : yup.string().required("Enter ward no.")
   })
 
   const formik = useFormik({
     initialValues: {
-      holdingNo : ''
+      holdingNo : '',
+      wardId : ''
     }, 
 
     onSubmit: (values) => {
@@ -47,17 +51,22 @@ function ConcessionFormIndex() {
   console.log("updattion status => ", updation)
 
   const submitHoldingNo = (values) => {
-    console.log("--2-- entering to submit function")
+    console.log("--2-- entering to submit function values => ", values)
+    console.log("header", ApiHeader())
+    setloader(true)
     axios.post(postHolding,values, ApiHeader())
     .then((res) => {
-      console.log("--3-- holding no. submitted", res.data.message)
-      setmsg(res.data.message)
-       if(res.data.message == "True"){
+      console.log("--3-- holding no. submitted", res)
+      setindex(res.data.data.id)
+       if(res.data.status == true){
+        console.log("index no. => ", index)
         toast.success("Found successfully...")
         setupdation(true)
-      } else if(res.data.message == "False"){
+        setloader(false)
+      } else if(res.data.status == false){
          toast.error("Not found ...")
          setupdation(false)
+         setloader(false)
       }else{
         return null
       }
@@ -65,6 +74,7 @@ function ConcessionFormIndex() {
     .catch((err) => {
       console.log('--3-- holding submission error => ', err)
       toast.error("Something went wrong !!")
+      setloader(false)
     })
   }  
 
@@ -164,22 +174,46 @@ function ConcessionFormIndex() {
 
 
       <div className="mt-6">
-      {updation ? <ConcessionForm backFun={backFun}/> : <form onSubmit={formik.handleSubmit} onChange={formik.handleChange} className='animate__animated animate__fadeInDown flex flex-wrap flex-col md:flex-row md:space-x-4 space-y-4 md:items-center md:justify-evenly justify-center items-evenly border-t-2 border-l-2 border-zinc-100 rounded-md shadow-lg py-3 pb-6 bg-sky-100 hover:bg-sky-200 transition-all duration-300 px-4'>
+      {updation ? <ConcessionForm backFun={backFun} index={index}/> : <form onSubmit={formik.handleSubmit} onChange={formik.handleChange} className='animate__animated animate__fadeInDown flex flex-wrap flex-col md:flex-row md:space-x-4  md:items-center md:justify-evenly justify-center items-evenly border-t-2 border-l-2 border-zinc-100 rounded-md shadow-lg py-3 pb-6 bg-sky-100 hover:bg-sky-200 transition-all duration-300 px-4 w-[100%] md:w-[80rem]'>
 
-<div>
+<div className="md:w-[35%] w-full">
   <label className="form-label inline-block mt-2 text-gray-600 text-sm font-semibold" htmlFor="holdingNo">Holding No. (15 digits) : </label>
-</div>
+
 
 <div>
-  <input type="text" name="holdingNo" id="holdingNo" maxLength={15} className="form-control block md:w-[35rem] w-[17rem] px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
+  <input type="text" name="holdingNo" id="holdingNo" maxLength={15} className="form-control block w-full px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
+</div>
 </div>
 
+<div className="md:w-[35%] w-full">
+  <label className="form-label inline-block mt-2 text-gray-600 text-sm font-semibold" htmlFor="wardId">Ward No. : </label>
+
+
 <div>
-  <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
+  <input type="text" name="wardId" id="wardId" maxLength={15} className="form-control block w-full px-3 py-1.5 md:py-1 md:text-md font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none placeholder-gray-300 shadow-md text-sm" />
+</div>
+</div>
+
+<div className="mt-4 w-[20%]">
+  <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white mt-4 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
 </div>
 
 </form> }
       </div>
+
+ {loader && <div className="w-full z-10  mx-auto text-center flex justify-center items-center">
+            <span className="inline">
+              <ColorRing
+                visible={true}
+                height="120"
+                width="120"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+                colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+              />
+            </span>
+          </div>}
 
 
 

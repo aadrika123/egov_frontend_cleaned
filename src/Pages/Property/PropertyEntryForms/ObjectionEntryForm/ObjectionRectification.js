@@ -20,7 +20,7 @@ import ObjectionRectificationTable from './ObjectionRectificationTable'
 
 const ObjectionRectification = () => {
 
-  const [updation, setupdation] = useState(true)
+  const [updation, setupdation] = useState(false)
   const [ownerData, setownerData] = useState()
 
   const {postHolding} = apiLinks()

@@ -30,6 +30,8 @@ function ConcessionForm(props) {
   const [resultData, setresultData] = useState({});
   const [concessionUpload, setconcessionUpload] = useState()
 
+  console.log("index => ", props?.index)
+
   const navigate = useNavigate()
 
   const validationSchema = yup.object({
@@ -84,11 +86,12 @@ function ConcessionForm(props) {
     fd.append("speciallyAbledDoc", speciallyUpload);
     fd.append("armedForceDoc", armedForceUpload);
     fd.append("concessionDoc", concessionUpload)
+    fd.append("propId", props?.index)
 
     console.log("--2-- before fetch...", fd);
 
     axios
-      .post(entryForm, fd, ApiHeader)
+      .post(entryForm, fd, ApiHeader())
       .then(function (response) {
         console.log(
           "successfully posted => ",

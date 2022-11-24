@@ -9,12 +9,13 @@
 const ConcessionApi = () => {
     
     const baseUrl = 'http://192.168.0.205:8000/api/property/concession'
+    const jskUrl = 'http://192.168.0.205:8000/api/property/saf'
 
     let apiList = {
         
-        entryForm : `${baseUrl}/UpdateDocuments/1`,
+        entryForm : `${baseUrl}/apply-concession`,
 
-        postHolding : `${baseUrl}/postHolding`
+        postHolding : `${jskUrl}/get-prop-byholding`
 
     }
 
