@@ -87,6 +87,9 @@ import WorkflowMaster from "Pages/Workflow/WorkflowMaster/WorkflowMaster";
 import PropertyRoutes from "Pages/Property/PropertyRoutes";
 import ObjectionRectification from "Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionRectification";
 import ClusterFormIndex from "Pages/Property/ClusterForms/ClusterFormIndex";
+import ObjectionIndex from "Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionIndex";
+import ObjectionRectificationTable from "Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionRectificationTable";
+import ObjectionForgery from "Pages/Property/PropertyEntryForms/ObjectionEntryForm/ObjectionForgery";
 
 function App(props) {
   const [boxWidth, setBoxWidth] = useState({
@@ -212,11 +215,10 @@ function App(props) {
                 element={<ColonySafApplicationFormIndex />}
               />
               <Route path="/legacy" element={<LegacyEntryFormIndex />} />
-              <Route path="/objection" element={<ObjectionFormIndex />} />
-              <Route
-                path="/objection-rectification"
-                element={<ObjectionRectification />}
-              />
+              <Route path="/objection" element={<ObjectionIndex />}/>
+            <Route path="/objection-clerical-mistake" element={<ObjectionRectificationTable />} />
+            <Route path="/objection-forgery" element={<ObjectionForgery/>} />
+            <Route path="/objection-assessment-error" element={<ObjectionFormIndex/>} />
               <Route path="/saf-entry" element={<SafEntryScreen />} />
               <Route path="/tcform" element={<TcVerficationFormIndex />} />
               <Route

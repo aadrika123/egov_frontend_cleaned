@@ -7,9 +7,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { allowFloatInput } from 'Components/Common/PowerUps/PowerupFunctions';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function ObjectionEntryForm(props) {
+
+    const navigate = useNavigate()
 
     const [harvestingStatus, setHarvestingStatus] = useState(false)
     const [roadWidthStatus, setroadWidthStatus] = useState(false)
@@ -471,17 +474,17 @@ function ObjectionEntryForm(props) {
 
                         </div>
 
-                        <div className="col-span-4 grid grid-cols-2 mt-10">
-
-                            <div className='md:px-0'>
-                                {/* <button onClick={() => props.backFun(3)} type="button" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Back</button> */}
-                            </div>
-                            <div className='md:px-10 text-right'>
-
-                                <button type='submit' className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight  rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Save</button>
-                            </div>
-
-                        </div>
+                        <div className="col-span-4 flex flex-row flex-wrap justify-between items-center w-[full] mt-10 ">
+                          
+                          <div onClick={() => navigate('/objection')} className="w-[5rem] cursor-pointer px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                              Back
+                          </div>
+                         <div>
+                         <button type="submit" className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
+                         </div>
+                      
+              
+                                      </div>
                     </div>
 
                 </form>

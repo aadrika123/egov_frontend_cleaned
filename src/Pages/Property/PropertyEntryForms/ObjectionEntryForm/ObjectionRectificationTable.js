@@ -15,8 +15,11 @@ import apiLinks from 'Components/ApiList/ObjectionRectificationApi'
 import 'animate.css'
 import {Toggle} from 'react-toggle-component'
 import { toast, ToastContainer } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const ObjectionRectificationTable = (props) => {
+
+  const navigate = useNavigate()
 
     const {postRectification} = apiLinks()
 
@@ -213,7 +216,14 @@ const [safMemberUpload, setsafMemberUpload] = useState()
             
             </table>
 
-            <button type="submit" className=" px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
+            <div className='flex flex-row flex-wrap justify-between items-center'>
+            <div onClick={() => navigate('/objection')} className="w-[5rem] cursor-pointer px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                Back
+            </div>
+           <div>
+           <button type="submit" className=" px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"> Submit </button>
+           </div>
+           </div>
 
         </form> 
     
